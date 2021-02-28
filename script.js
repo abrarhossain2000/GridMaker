@@ -14,12 +14,21 @@ function addC() {
 
 // Removes a row
 function removeR() {
-    alert("Clicked Remove Row");
+    // gets first tr tag then removes it
+    var row = document.body.getElementsByTagName("tr")[0];
+    row.remove();
 }
 
 // Removes a column
 function removeC() {
-    alert("Clicked Remove Col");
+    // gets every tr tag and stores it in row
+    var row = document.body.getElementsByTagName("tr");
+
+    // removes cell at index 0 in each row
+    var i = 0;  
+    for (var j = 0; j < row.length; j++) { 
+        row[j].deleteCell(i); 
+    }
 }
 
 // sets global var for selected color
