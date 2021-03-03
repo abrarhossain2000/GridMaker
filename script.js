@@ -35,10 +35,27 @@ function removeC() {
 function selected() {
     colorSelected = document.getElementById("selectedID").value;
     console.log(colorSelected);
+    var theGrid = document.getElementById("grid");
+    console.log(theGrid);
+
+
+    for(var i = 0; i<theGrid.rows.length; i++){
+        theGrid.rows[i].onclick = function(){
+            this.style.background = colorSelected;
+        }
+    }
+}
+
+function changeCellColor(){
+
 }
 
 function fill() {
-    alert("Clicked Fill All");
+    // alert("Clicked Fill All");
+    var x = document.getElementsByTagName("td");
+    for( var i = 0; i < x.length; i++){
+        x[i].style.backgroundColor = colorSelected; 
+    }
 }
 
 function clearAll() {
