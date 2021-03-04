@@ -31,28 +31,15 @@ function removeC() {
     }
 }
 
-// sets global var for selected color
+
 function selected() {
     colorSelected = document.getElementById("selectedID").value;
-    console.log(colorSelected);
-    var theGrid = document.getElementById("grid");
-    console.log(theGrid);
-
-
-    for(var i = 0; i<theGrid.rows.length; i++){
-        theGrid.rows[i].onclick = function(){
-            this.style.background = colorSelected;
-        }
-    }
-}
-
-function changeCellColor(){
-
 }
 
 function fill() {
     // alert("Clicked Fill All");
     var x = document.getElementsByTagName("td");
+    console.log(x);
     for( var i = 0; i < x.length; i++){
         x[i].style.backgroundColor = colorSelected; 
     }
