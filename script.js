@@ -42,14 +42,30 @@ function removeC() {
     }
 }
 
-function selected() {
-    colorSelected = document.getElementById("selectedID").value;
+//click on a single cell, changing its color to the currently selected color
+var table = document.getElementById("grid") //gets the grid
+var cells = table.getElementsByTagName("td"); //gets the cells of the grid
+
+//for each of cell, add an event listener of 'click' & change the color of the cell when clicked on.
+for(var i = 0; i < cells.length; ++i){
+    cells[i].addEventListener("click", function(evt){
+        targetCell = evt.target;
+        colorSelected = document.getElementById("selectedID").value;
+        targetCell.style.backgroundColor = colorSelected;
+    });
 }
 
+//select a color from a dropdown menu of colors
+function selected() {
+    colorSelected = document.getElementById("selectedID").value; //sets the colorSelected
+}
+
+//fill all cells with the currently selected color
 function fill() {
-    // alert("Clicked Fill All");
+    //gets td tag
     var x = document.getElementsByTagName("td");
-    console.log(x);
+
+    //fills every cell with the colorSelected
     for( var i = 0; i < x.length; i++){
         x[i].style.backgroundColor = colorSelected; 
     }
