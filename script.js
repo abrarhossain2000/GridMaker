@@ -69,6 +69,7 @@ function fill() {
     for( var i = 0; i < x.length; i++){
         x[i].style.backgroundColor = colorSelected; 
     }
+}
 
 function clearAll() {
     alert("Clicked Clear All");
