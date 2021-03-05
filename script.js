@@ -42,7 +42,10 @@ function removeC() {
     }
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1f00d0338f0cb41e7ef3ce6ede5724bfa83ca556
 function selected() {
     colorSelected = document.getElementById("selectedID").value;
 }
@@ -54,7 +57,10 @@ function fill() {
     for( var i = 0; i < x.length; i++){
         x[i].style.backgroundColor = colorSelected; 
     }
+<<<<<<< HEAD
 }
+=======
+>>>>>>> 1f00d0338f0cb41e7ef3ce6ede5724bfa83ca556
 
 function clearAll() {
     alert("Clicked Clear All");
