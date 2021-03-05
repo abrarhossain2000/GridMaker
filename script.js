@@ -3,13 +3,24 @@ let numCols = 0;
 let colorSelected;
 
 //Adds a row
-function addR() {
-    alert("Clicked Add Row");
+function addR() 
+{ 
+    var tbl = document.getElementById("grid"); 
+    row = tbl.insertRow(tbl.rows.length); 
+    for (i = 0; i < tbl.rows[0].cells.length; i++) 
+    { 
+        createCell = (row.insertCell(i), i, 'row'); 
+    }
 }
 
 // Adds a column
-function addC() {
-    alert("Clicked Add Col");
+function addC() 
+{ 
+    var tbl = document.getElementById('grid'); 
+    for (i = 0; i < tbl.rows.length; i++) 
+    { 
+        createCell= (tbl.rows[i].insertCell(tbl.rows[i].cells.length), i, 'col'); 
+    }
 }
 
 // Removes a row
@@ -58,7 +69,6 @@ function fill() {
     for( var i = 0; i < x.length; i++){
         x[i].style.backgroundColor = colorSelected; 
     }
-}
 
 function clearAll() {
     alert("Clicked Clear All");
