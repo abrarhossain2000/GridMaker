@@ -69,11 +69,30 @@ function fill() {
     for( var i = 0; i < x.length; i++){
         x[i].style.backgroundColor = colorSelected; 
     }
+}
 
 function clearAll() {
-    alert("Clicked Clear All");
+    // select all the table cells
+    let tableCell = document.getElementsByTagName("td");
+
+    // clear every cell
+    for (let i = 0; i < tableCell.length; i++) {
+        tableCell[i].style.backgroundColor = "white";
+    }
 }
 
 function fillU() {
-    alert("Clicked Fill All Uncolored");
+    // select all uncolored cells (white cells)
+    let uncoloredCells = [];
+    let tableCell = document.getElementsByTagName("td");
+    for (let i = 0; i < tableCell.length; i++) {
+        if (tableCell[i].style.backgroundColor == "white") {
+            uncoloredCells.push(tableCell[i]);
+        }
+    }
+
+    //fills every uncolored cell with the selected color
+    for (let i = 0; i < uncoloredCells.length; i++){
+        uncoloredCells[i].style.backgroundColor = colorSelected; 
+    }
 }
