@@ -42,15 +42,17 @@ function removeC() {
     }
 }
 
-// sets global var for selected color
 function selected() {
     colorSelected = document.getElementById("selectedID").value;
-    console.log(colorSelected);
 }
 
 function fill() {
-    alert("Clicked Fill All");
-}
+    // alert("Clicked Fill All");
+    var x = document.getElementsByTagName("td");
+    console.log(x);
+    for( var i = 0; i < x.length; i++){
+        x[i].style.backgroundColor = colorSelected; 
+    }
 
 function clearAll() {
     alert("Clicked Clear All");
