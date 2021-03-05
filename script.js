@@ -1,26 +1,60 @@
-let numRows = 0;
-let numCols = 0;
+var tbl = document.getElementById("grid"); 
+var rowNum = tbl.rows.length;
+var colNum = tbl.rows[0].cells.length;
 let colorSelected;
+
+//click on a single cell, changing its color to the currently selected color
+
+//TABLE
+var cellsInTable = tbl.getElementsByTagName("td"); //gets the cells of the grid
+
+// for each of cell, add an event listener of 'click' & change the color of the cell when clicked on.
+for(var i = 0; i < cellsInTable.length; ++i){
+    cellsInTable[i].addEventListener("click", function(evt){
+        targetCell = evt.target;
+        colorSelected = document.getElementById("selectedID").value;
+        targetCell.style.backgroundColor = colorSelected;
+    });
+}
+
+//NEW ELEMENTS OF TABLE
+function setCell(cell){
+    cell.addEventListener("click", function(evt){
+        targetCell = evt.target;
+        colorSelected = document.getElementById("selectedID").value;
+        targetCell.style.backgroundColor = colorSelected;
+    });
+}
 
 //Adds a row
 function addR() 
 { 
-    var tbl = document.getElementById("grid"); 
-    row = tbl.insertRow(tbl.rows.length); 
+    // row = tbl.insertRow(tbl.rows.length);
+ 
+    testingrow = document.createElement("tr");
     for (i = 0; i < tbl.rows[0].cells.length; i++) 
     { 
-        createCell = (row.insertCell(i), i, 'row'); 
+        // createCell = (row.insertCell(i), i, 'row'); 
+        testingcell = document.createElement("td");
+        setCell(testingcell);
+        testingrow.appendChild(testingcell);
     }
+    tbl.appendChild(testingrow);
+    rowNum++;
 }
 
 // Adds a column
 function addC() 
 { 
-    var tbl = document.getElementById('grid'); 
+    totalRows = document.getElementsByTagName("tr");
     for (i = 0; i < tbl.rows.length; i++) 
     { 
-        createCell= (tbl.rows[i].insertCell(tbl.rows[i].cells.length), i, 'col'); 
+        // createCell= (tbl.rows[i].insertCell(tbl.rows[i].cells.length), i, 'col'); 
+        testingcell = document.createElement("td");
+        setCell(testingcell);
+        totalRows[i].appendChild(testingcell);
     }
+    colNum++
 }
 
 // Removes a row
@@ -40,19 +74,6 @@ function removeC() {
     for (var j = 0; j < row.length; j++) { 
         row[j].deleteCell(i); 
     }
-}
-
-//click on a single cell, changing its color to the currently selected color
-var table = document.getElementById("grid") //gets the grid
-var cells = table.getElementsByTagName("td"); //gets the cells of the grid
-
-//for each of cell, add an event listener of 'click' & change the color of the cell when clicked on.
-for(var i = 0; i < cells.length; ++i){
-    cells[i].addEventListener("click", function(evt){
-        targetCell = evt.target;
-        colorSelected = document.getElementById("selectedID").value;
-        targetCell.style.backgroundColor = colorSelected;
-    });
 }
 
 //select a color from a dropdown menu of colors
