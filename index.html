@@ -7,28 +7,30 @@
         <link rel="stylesheet" type="text/css" href="styles.css">
     </head>
     <body>
-        <button onclick="addR()">Add Row</button>
-        <button onclick="addC()">Add Col</button>
-        <button onclick="removeR()">Remove Row</button>
-        <button onclick="removeC()">Remove Col</button>
-        <button onclick="fillU()">Fill All Uncolored</button>
-        <button onclick="fill()">Fill All</button>
-        <button onclick="clearAll()">Clear</button>
-        <select onchange="selected()" id="selectedID">
+        <button class="button button1" onclick="addR()">Add Row</button>
+        <button class="button button2" onclick="addC()">Add Column</button>
+        <button class="button button3" onclick="removeR()">Remove Row</button>
+        <button class="button button4" onclick="removeC()">Remove Column</button>
+        <button class="button button5" onclick="fillU()">Fill All Uncolored</button>
+        <button class="button button6" onclick="fill()">Fill All</button>
+        <button class="button button7" onclick="clearAll()">Clear</button>
+        <select class="button button8" onchange="selected()" id="selectedID">
             <option value="SELECT">SELECT</option>
-
-            <option value="#e4f9fd">Sky Blue</option>
-            <option value="#f2e2ff">Lavender</option>
-            <option value="#f49ac2">Magenta</option>
             <option value="Navy">Navy</option>
-            <option value="Pink">Pink</option>
+            <option value="#e4f9fd">Sky Blue</option>
+            <option value="#00E8D8">Aqua</option>
+            <option value="#5c00e6">Indigo</option>
+            <option value="#f2e2ff">Lavender</option>
+            <option value="#fcc4fc">Pink</option>
+            <option value="Red">Red</option>
+            <option value="#f49ac2">Magenta</option>
+            <option value="#FC7460">Peach</option>
             <option value="Black">Black</option>
             <option value="White">White</option>
             <option value="Orange">Orange</option>
-            <option value="Red">Red</option>
-            <option value="Blue">Blue</option>
-            <option value="Green">Green</option>
             <option value="Yellow">Yellow</option>
+            <option value="#4cdc48">Lime Green</option>
+            <option value="#003c14">Forest Green</option>
         </select>
         <table id="grid">
         </table>
