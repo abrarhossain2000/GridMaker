@@ -5,18 +5,6 @@ let colorSelected;
 
 //click on a single cell, changing its color to the currently selected color
 
-//TABLE
-var cellsInTable = tbl.getElementsByTagName("td"); //gets the cells of the grid
-
-// for each of cell, add an event listener of 'click' & change the color of the cell when clicked on.
-for(var i = 0; i < cellsInTable.length; ++i){
-    cellsInTable[i].addEventListener("click", function(evt){
-        targetCell = evt.target;
-        colorSelected = document.getElementById("selectedID").value;
-        targetCell.style.backgroundColor = colorSelected;
-    });
-}
-
 //NEW ELEMENTS OF TABLE
 function setCell(cell){
     cell.addEventListener("click", function(evt){
