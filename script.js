@@ -44,6 +44,7 @@ function addC()
 
 // Removes a row
 function removeR() {
+    rowNum--;
     // gets first tr tag then removes it
     var row = document.body.getElementsByTagName("tr")[0];
     row.remove();
