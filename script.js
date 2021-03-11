@@ -5,8 +5,11 @@ let colorSelected;
 
 //click on a single cell, changing its color to the currently selected color
 
-//NEW ELEMENTS OF TABLE
+//Set cell attributees
 function setCell(cell){
+    cell.style.backgroundColor = "white"; //default white background
+
+    //add eventlistener of click & change color
     cell.addEventListener("click", function(evt){
         targetCell = evt.target;
         colorSelected = document.getElementById("selectedID").value;
@@ -21,7 +24,7 @@ function addR()
     for (i = 0; i < colNum; i++) 
     { 
         let cell = document.createElement("td"); //create a new element for cell
-        setCell(cell); // set the cell as the new element
+        setCell(cell); // set the cell attribtutes
         row.appendChild(cell); //sets the cell as the last child
     }
     tbl.appendChild(row); //append the row as the last child
@@ -31,19 +34,22 @@ function addR()
 // Adds a column
 function addC() 
 { 
-    colNum++;
+    colNum++; //increase the column number
+
+    //for each row
     for (i = 0; i < rowNum; i++) 
     { 
-        var cell = document.getElementsByTagName("tr")[i];
-        var column = document.createElement("td"); //create a new element for column
-        setCell(column); 
-        cell.appendChild(column);
+        var row = document.getElementsByTagName("tr")[i]; //each row
+        var columnCell = document.createElement("td"); //create a new element 
+        setCell(columnCell); //set the cell attributes
+        row.appendChild(columnCell); //add the column cell to the row
     }
-    tbl.appendChild(cell);
+    tbl.appendChild(row); //add the row with the new column cell to the table.
 }
 
 // Removes a row
 function removeR() {
+    rowNum--;
     // gets first tr tag then removes it
     var row = document.body.getElementsByTagName("tr")[0];
     row.remove();
@@ -51,6 +57,7 @@ function removeR() {
 
 // Removes a column
 function removeC() {
+    colNum--;
     // gets every tr tag and stores it in row
     var row = document.body.getElementsByTagName("tr");
 
