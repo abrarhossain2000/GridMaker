@@ -17,34 +17,28 @@ function setCell(cell){
 //Adds a row
 function addR() 
 { 
-    // row = tbl.insertRow(tbl.rows.length);
- 
-    var row = document.createElement("tr");
+    var row = document.createElement("tr"); //create a new element for row
     for (i = 0; i < colNum; i++) 
     { 
-        // createCell = (row.insertCell(i), i, 'row'); 
-        let cell = document.createElement("td");
-        setCell(cell);
-        row.appendChild(cell);
+        let cell = document.createElement("td"); //create a new element for cell
+        setCell(cell); // set the cell as the new element
+        row.appendChild(cell); //sets the cell as the last child
     }
-    tbl.appendChild(row);
-    rowNum++;
+    tbl.appendChild(row); //append the row as the last child
+    rowNum++; //increase the row number
 }
 
 // Adds a column
 function addC() 
 { 
-    // totalRows = document.getElementsByTagName("tr");
     colNum++;
     for (i = 0; i < rowNum; i++) 
     { 
-        // createCell= (tbl.rows[i].insertCell(tbl.rows[i].cells.length), i, 'col'); 
         var cell = document.getElementsByTagName("tr")[i];
-        var column = document.createElement("td");
-        setCell(column);
+        var column = document.createElement("td"); //create a new element for column
+        setCell(column); 
         cell.appendChild(column);
     }
-    // colNum++;
     tbl.appendChild(cell);
 }
 
