@@ -1,6 +1,6 @@
 var tbl = document.getElementById("grid"); 
-var rowNum = tbl.rows.length;
-var colNum = tbl.rows[0].cells.length;
+var rowNum = 1;
+var colNum = 1;
 let colorSelected;
 
 //click on a single cell, changing its color to the currently selected color
@@ -31,30 +31,33 @@ function addR()
 { 
     // row = tbl.insertRow(tbl.rows.length);
  
-    testingrow = document.createElement("tr");
-    for (i = 0; i < tbl.rows[0].cells.length; i++) 
+    var row = document.createElement("tr");
+    for (i = 0; i < colNum; i++) 
     { 
         // createCell = (row.insertCell(i), i, 'row'); 
-        testingcell = document.createElement("td");
-        setCell(testingcell);
-        testingrow.appendChild(testingcell);
+        let cell = document.createElement("td");
+        setCell(cell);
+        row.appendChild(cell);
     }
-    tbl.appendChild(testingrow);
+    tbl.appendChild(row);
     rowNum++;
 }
 
 // Adds a column
 function addC() 
 { 
-    totalRows = document.getElementsByTagName("tr");
-    for (i = 0; i < tbl.rows.length; i++) 
+    // totalRows = document.getElementsByTagName("tr");
+    colNum++;
+    for (i = 0; i < rowNum; i++) 
     { 
         // createCell= (tbl.rows[i].insertCell(tbl.rows[i].cells.length), i, 'col'); 
-        testingcell = document.createElement("td");
-        setCell(testingcell);
-        totalRows[i].appendChild(testingcell);
+        var cell = document.getElementsByTagName("tr")[i];
+        var column = document.createElement("td");
+        setCell(column);
+        cell.appendChild(column);
     }
-    colNum++
+    // colNum++;
+    tbl.appendChild(cell);
 }
 
 // Removes a row
